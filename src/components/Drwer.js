@@ -167,107 +167,114 @@ export default function Drwer() {
           </Typography>
           {auth && (
             <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-              >
-                <ShoppingBasketIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleDelete}><DeleteOutlineIcon /></MenuItem>
-               {
-                arrGames ?
-                  
-                arrGames.map(items => {
+            
+                {(submit) &&(
+                  <>
+                      <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={handleMenu}
+                    color="inherit"
+                  >
+                  <ShoppingBasketIcon />
+                  </IconButton>
+                  <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    <MenuItem onClick={handleDelete}><DeleteOutlineIcon /></MenuItem>
+                   {
+                    arrGames ?
+                      
+                    arrGames.map(items => {
+        
+                        const {title, img} = items
+                          return (
+                            <MenuItem
+                            onClick={handleClose}
+                            key={title}
+                            >
+                              <img
+                              style={{
+                                width:'100px',
+                                height:'100px'
+                              }}
+                               src={img} alt={title} />
+                              <Typography variant='h6'>{title}</Typography>
+                            </MenuItem>
+                          )
+                        })
+                       
+                    :''
+                   }
+                     {
+                    arrFood ?
+                      
+                    arrFood.map(items => {
+        
+                        const {title, img} = items
+                          return (
+                            <MenuItem
+                            onClick={handleClose}
+                            key={title}
+                            >
+                              <img
+                              style={{
+                                width:'100px',
+                                height:'100px'
+                              }}
+                               src={img} alt={title} />
+                              <Typography variant='h6'>{title}</Typography>
+                            </MenuItem>
+                          )
+                        })
+                       
+                    :''
+                   }
     
-                    const {title, img} = items
-                      return (
-                        <MenuItem
-                        onClick={handleClose}
-                        key={title}
-                        >
-                          <img
-                          style={{
-                            width:'100px',
-                            height:'100px'
-                          }}
-                           src={img} alt={title} />
-                          <Typography variant='h6'>{title}</Typography>
-                        </MenuItem>
-                      )
-                    })
-                   
-                :''
-               }
-                 {
-                arrFood ?
+                     {
+                    arrActivity ?
+                      
+                    arrActivity.map(items => {
+        
+                        const {title, img} = items
+                          return (
+                            <MenuItem
+                            onClick={handleClose}
+                            key={title}
+                            >
+                              <img
+                              style={{
+                                width:'100px',
+                                height:'100px'
+                              }}
+                               src={img} alt={title} />
+                              <Typography variant='h6'>{title}</Typography>
+                            </MenuItem>
+                          )
+                        })
+                       
+                    :''
+                   }
                   
-                arrFood.map(items => {
-    
-                    const {title, img} = items
-                      return (
-                        <MenuItem
-                        onClick={handleClose}
-                        key={title}
-                        >
-                          <img
-                          style={{
-                            width:'100px',
-                            height:'100px'
-                          }}
-                           src={img} alt={title} />
-                          <Typography variant='h6'>{title}</Typography>
-                        </MenuItem>
-                      )
-                    })
-                   
-                :''
-               }
+                  </Menu>
 
-                 {
-                arrActivity ?
-                  
-                arrActivity.map(items => {
-    
-                    const {title, img} = items
-                      return (
-                        <MenuItem
-                        onClick={handleClose}
-                        key={title}
-                        >
-                          <img
-                          style={{
-                            width:'100px',
-                            height:'100px'
-                          }}
-                           src={img} alt={title} />
-                          <Typography variant='h6'>{title}</Typography>
-                        </MenuItem>
-                      )
-                    })
-                   
-                :''
-               }
+                  </>
+                )}
               
-              </Menu>
             </div>
           )}
             </Toolbar>
