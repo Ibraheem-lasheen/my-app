@@ -26,7 +26,7 @@ const Login = () => {
 
     
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         if(username === "admin" && password === "admin"){
 
            await localStorage.setItem("submit", JSON.stringify(true));
