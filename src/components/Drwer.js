@@ -115,7 +115,15 @@ export default function Drwer() {
   };
 
   const handleDelete = () => {
-    localStorage.clear();
+    // localStorage.clear();
+    localStorage.removeItem("arrGames");
+    localStorage.removeItem("arrFood");
+    localStorage.removeItem("arrActivity");
+
+
+  }
+  const handelDelSubmit = () => {
+    localStorage.removeItem("submit");
 
   }
 
@@ -303,7 +311,7 @@ export default function Drwer() {
             ))}
              <Link
               to='/login'
-              onClick={handleDelete}
+              onClick={handelDelSubmit}
               >
                 <ListItem disablePadding>
                   <ListItemButton>
